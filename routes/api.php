@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\MenuController;
 use App\Http\Controllers\api\ReservaController;
+use App\Http\Controllers\api\PedidoController;
+
 
 
 /*
@@ -32,3 +34,9 @@ Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas');
 Route::delete('/reservas/{reserva}', [ReservaController::class, 'destroy'])->name('reservas.destroy');
 Route::get('/reservas/{reserva}', [ReservaController::class, 'show'])->name('reservas.show');
 Route::put('/reservas/{reserva}', [ReservaController::class, 'update'])->name('reservas.update');
+
+Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
+Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
+Route::delete('/pedidos/{pedido}', [PedidoController::class, 'destroy'])->name('pedidos.destroy');
+Route::get('/pedidos/{pedido}', [PedidoController::class, 'show'])->name('pedidos.show');
+Route::put('/pedidos/{pedido}', [PedidoController::class, 'update'])->name('pedidos.update');
